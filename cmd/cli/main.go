@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"log"
 	"os"
 
 	"github.com/google/go-github/v57/github" // with go modules enabled (GO111MODULE=on or outside GOPATH)
@@ -10,7 +11,7 @@ import (
 func main() {
 	token, ok := os.LookupEnv("GITHUB_TOKEN")
 	if !ok {
-		os.Exit(1)
+		log.Fatal("could not find github token, can't do anything")
 	}
 
 	client := github.NewClient(nil).WithAuthToken(token)
