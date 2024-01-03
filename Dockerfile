@@ -1,11 +1,5 @@
 FROM golang:1.21.5-alpine AS builder
 
-ENV CGO_ENABLED=0 \
-    GOOS=linux \
-    GOARCH=amd64
-
-EXPOSE 8080
-
 WORKDIR /dist
 
 COPY . .
