@@ -10,7 +10,7 @@ func main() {
 	client := github.NewClient(nil).WithAuthToken("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")
 	ctx := context.Background()
 
-	prs, _, _ := client.PullRequests.List(ctx, "algelymi", "what-would-linus-torvalds-say", nil)
+	prs, _, _ := client.PullRequests.List(ctx, "algleymi", "what-would-linus-torvalds-say", nil)
 
-	print(prs[0].Body)
+	print(*prs[0].Assignee.Login)
 }
