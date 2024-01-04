@@ -1,23 +1,26 @@
 package main
 
 import (
-	"context"
+	"encoding/json"
 	"log"
 	"os"
-
-	"github.com/google/go-github/v57/github" // with go modules enabled (GO111MODULE=on or outside GOPATH)
+	// with go modules enabled (GO111MODULE=on or outside GOPATH)
 )
 
+type Event struct {
+	PullRequest PullRequest `json:"pull_request"`
+}
+type PullRequest struct {
+	DiffURL string `json:"diff_url"`
+}
+
 func main() {
-	token, ok := os.LookupEnv("GITHUB_TOKEN")
+	pathToEvent, ok := os.LookupEnv("GITHUB_EVENT_PATH")
 	if !ok {
-		log.Fatal("could not find github token, can't do anything")
+		log.Fatal("could not find event, can't do anything")
 	}
 
-	client := github.NewClient(nil).WithAuthToken(token)
-	ctx := context.Background()
-
-	prs, _, _ := client.PullRequests.List(ctx, "algleymi", "what-would-linus-torvalds-say", &github.PullRequestListOptions{State: "all"})
-
-	print(*prs[0].Title)
+	data, _ := os.ReadFile(pathToEvent)
+	var event Event
+	json.Unmarshal(data, &event)
 }
