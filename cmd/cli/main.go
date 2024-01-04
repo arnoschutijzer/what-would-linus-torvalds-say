@@ -47,7 +47,7 @@ func main() {
 	}
 
 	if len(diff) > 10_000 {
-		log.Printf("diff might be too large since diff length (%d) > 10_000\n", len(diff))
+		log.Printf("diff might be too large since diff length (%d) > 15_000 characters\n", len(diff))
 		log.Println("failing silently...")
 		os.Exit(0)
 	}
