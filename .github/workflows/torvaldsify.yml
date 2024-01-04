@@ -1,0 +1,14 @@
+name: torvaldsify
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: torvaldsify
+    runs-on: ubuntu-latest
+    steps:
+    - name: Log info
+      run: |
+        more $GITHUB_EVENT_PATH
