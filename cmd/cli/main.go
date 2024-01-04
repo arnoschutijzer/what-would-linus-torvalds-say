@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"log"
 	"os"
-	// with go modules enabled (GO111MODULE=on or outside GOPATH)
 )
 
 type Event struct {
