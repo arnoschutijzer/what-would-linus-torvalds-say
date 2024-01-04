@@ -12,3 +12,4 @@ jobs:
     - name: Log info
       run: |
         more $GITHUB_EVENT_PATH
+        echo $GITHUB_EVENT_PATH
