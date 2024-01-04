@@ -45,5 +45,12 @@ func main() {
 	if err != nil {
 		log.Fatal("could not get diff due to: ", err)
 	}
+
+	if len(diff) > 10_000 {
+		log.Printf("yikes, diff might be too large %d > 10_000\n", len(diff))
+		log.Println("failing silently...")
+		os.Exit(0)
+	}
+
 	log.Println(diff)
 }
