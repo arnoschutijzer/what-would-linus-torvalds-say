@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
 	"os"
 
 	openai "github.com/sashabaranov/go-openai"
@@ -47,7 +48,7 @@ func AskTorvalds(diff *string) (*string, error) {
 	)
 
 	if err != nil {
-		return nil, err
+		log.Fatal("oops")
 	}
 
 	fmt.Println(resp.Choices[0].Message.Content)
