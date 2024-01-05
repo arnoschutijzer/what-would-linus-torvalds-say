@@ -3,14 +3,19 @@ package main
 import (
 	"log"
 
-	gh "github.com/arnoschutijzer/what-would-linus-torvalds-say"
+	torvaldsify "github.com/arnoschutijzer/what-would-linus-torvalds-say"
 )
 
 func main() {
-	diff, err := gh.GetDiffFromPullRequest()
+	diff, err := torvaldsify.GetDiffFromPullRequest()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	log.Println(*diff)
+	whatTorvaldsSaid, err := torvaldsify.AskTorvalds(diff)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(*whatTorvaldsSaid)
 }
