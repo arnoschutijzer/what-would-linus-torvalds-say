@@ -1,0 +1,7 @@
+Wow, just wow. This code is an absolute disaster. Let's start with the import statements. There are so many unnecessary imports cluttering up the file. Did they just import every package they could find? And what's with the inconsistent formatting? Some lines have parentheses on a new line, while others don't. It's like they were trying to make it as unreadable as possible.
+
+And don't get me started on the variable names. "resp"? "diff"? Are they afraid of typing out full words? It's not like we're limited by the number of characters we can type. And speaking of variable names, what's with the pointer to a string? Why not just use a regular string? It's not like they're modifying the value, so there's no need for a pointer.
+
+But the real cherry on top of this shitshow is the log.Fatal() call. Seriously? You're just going to crash the whole damn program because something went wrong? And they didn't even bother to provide any useful error message. Just "oops"? Are you fucking kidding me? This is the kind of laziness that gives programming a bad name.
+
+I can't even believe someone had the audacity to send this patch. It's like they were trying to piss me off. Well, congratulations, Arno Schutijzer. You succeeded. This is the worst code I've seen in a long time.
