@@ -17,5 +17,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Println(*whatTorvaldsSaid)
+	log.Println(whatTorvaldsSaid)
 }

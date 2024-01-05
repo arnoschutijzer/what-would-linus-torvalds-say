@@ -3,7 +3,6 @@ package torvalds
 import (
 	"context"
 	"errors"
-	"fmt"
 	"os"
 
 	openai "github.com/sashabaranov/go-openai"
@@ -19,14 +18,14 @@ Go into detail why the code is bad. Do not add a mail header or signature.
 The review should be at most 5 paragraphs of 2 sentences.
 Take examples from the subreddit linusrants.`
 
-func AskTorvalds(diff *string) (*string, error) {
+func AskTorvalds(diff string) (string, error) {
 	token, ok := os.LookupEnv("OPENAI_TOKEN")
 	if !ok {
-		return nil, ErrNoOpenAIToken
+		return "", ErrNoOpenAIToken
 	}
 
-	if len(*diff) > 10_000 {
-		return nil, ErrDiffTooLarge
+	if len(diff) > 10_000 {
+		return "", ErrDiffTooLarge
 	}
 
 	client := openai.NewClient(token)
@@ -41,17 +40,15 @@ func AskTorvalds(diff *string) (*string, error) {
 				},
 				{
 					Role:    openai.ChatMessageRoleUser,
-					Content: *diff,
+					Content: diff,
 				},
 			},
 		},
 	)
 
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	fmt.Println(resp.Choices[0].Message.Content)
-
-	return nil, nil
+	return resp.Choices[0].Message.Content, nil
 }
