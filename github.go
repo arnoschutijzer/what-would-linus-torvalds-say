@@ -44,7 +44,7 @@ func GetDiffFromPullRequest() (*string, error) {
 
 	client := github.NewClient(nil).WithAuthToken(token)
 	bg := context.Background()
-	diff, _, err := client.PullRequests.GetRaw(bg, event.Repository.Owner.Login, event.Repository.Name, event.Number, github.RawOptions{Type: github.Diff})
+	diff, _, err := client.PullRequests.GetRaw(bg, event.Repository.Owner.Login, event.Repository.Name, event.Number, github.RawOptions{Type: github.Patch})
 	if err != nil {
 		return nil, err
 	}
