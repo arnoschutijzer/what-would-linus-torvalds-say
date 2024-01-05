@@ -1,6 +1,6 @@
 {
     "action": "opened",
-    "number": 4,
+    "number": 5,
     "organization": {
       "avatar_url": "https://avatars.githubusercontent.com/u/100733843?v=4",
       "description": "",
@@ -18,32 +18,32 @@
     "pull_request": {
       "_links": {
         "comments": {
-          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/issues/4/comments"
+          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/issues/5/comments"
         },
         "commits": {
-          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/4/commits"
+          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/5/commits"
         },
         "html": {
-          "href": "https://github.com/algleymi/what-would-linus-torvalds-say/pull/4"
+          "href": "https://github.com/algleymi/what-would-linus-torvalds-say/pull/5"
         },
         "issue": {
-          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/issues/4"
+          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/issues/5"
         },
         "review_comment": {
           "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/comments{/number}"
         },
         "review_comments": {
-          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/4/comments"
+          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/5/comments"
         },
         "self": {
-          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/4"
+          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/5"
         },
         "statuses": {
-          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/statuses/f5be8eb39f2049d0cd4957403e10b62415032c03"
+          "href": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/statuses/362b28424fbcc00646c1fd6a030890e43063bd30"
         }
       },
       "active_lock_reason": null,
-      "additions": 0,
+      "additions": 2,
       "assignee": null,
       "assignees": [],
       "author_association": "CONTRIBUTOR",
@@ -120,8 +120,8 @@
           "name": "what-would-linus-torvalds-say",
           "node_id": "R_kgDOK-92Gg",
           "notifications_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/notifications{?since,all,participating}",
-          "open_issues": 2,
-          "open_issues_count": 2,
+          "open_issues": 3,
+          "open_issues_count": 3,
           "owner": {
             "avatar_url": "https://avatars.githubusercontent.com/u/100733843?v=4",
             "events_url": "https://api.github.com/users/algleymi/events{/privacy}",
@@ -144,9 +144,9 @@
           },
           "private": true,
           "pulls_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls{/number}",
-          "pushed_at": "2024-01-04T23:06:10Z",
+          "pushed_at": "2024-01-05T00:24:56Z",
           "releases_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/releases{/id}",
-          "size": 14,
+          "size": 30,
           "squash_merge_commit_message": "COMMIT_MESSAGES",
           "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
           "ssh_url": "git@github.com:algleymi/what-would-linus-torvalds-say.git",
@@ -168,7 +168,7 @@
           "watchers_count": 0,
           "web_commit_signoff_required": false
         },
-        "sha": "9f570071fc8ee9cb2b1ddfc5c61add7554ba7768",
+        "sha": "7101afe159aa537d67182d9d4c718583fdd3711d",
         "user": {
           "avatar_url": "https://avatars.githubusercontent.com/u/100733843?v=4",
           "events_url": "https://api.github.com/users/algleymi/events{/privacy}",
@@ -194,16 +194,16 @@
       "changed_files": 1,
       "closed_at": null,
       "comments": 0,
-      "comments_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/issues/4/comments",
+      "comments_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/issues/5/comments",
       "commits": 1,
-      "commits_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/4/commits",
-      "created_at": "2024-01-04T23:06:09Z",
-      "deletions": 0,
-      "diff_url": "https://github.com/algleymi/what-would-linus-torvalds-say/pull/4.diff",
+      "commits_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/5/commits",
+      "created_at": "2024-01-05T00:24:56Z",
+      "deletions": 1,
+      "diff_url": "https://github.com/algleymi/what-would-linus-torvalds-say/pull/5.diff",
       "draft": false,
       "head": {
-        "label": "algleymi:tmp",
-        "ref": "tmp",
+        "label": "algleymi:yikes",
+        "ref": "yikes",
         "repo": {
           "allow_auto_merge": false,
           "allow_forking": false,
@@ -273,8 +273,8 @@
           "name": "what-would-linus-torvalds-say",
           "node_id": "R_kgDOK-92Gg",
           "notifications_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/notifications{?since,all,participating}",
-          "open_issues": 2,
-          "open_issues_count": 2,
+          "open_issues": 3,
+          "open_issues_count": 3,
           "owner": {
             "avatar_url": "https://avatars.githubusercontent.com/u/100733843?v=4",
             "events_url": "https://api.github.com/users/algleymi/events{/privacy}",
@@ -297,9 +297,9 @@
           },
           "private": true,
           "pulls_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls{/number}",
-          "pushed_at": "2024-01-04T23:06:10Z",
+          "pushed_at": "2024-01-05T00:24:56Z",
           "releases_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/releases{/id}",
-          "size": 14,
+          "size": 30,
           "squash_merge_commit_message": "COMMIT_MESSAGES",
           "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
           "ssh_url": "git@github.com:algleymi/what-would-linus-torvalds-say.git",
@@ -321,7 +321,7 @@
           "watchers_count": 0,
           "web_commit_signoff_required": false
         },
-        "sha": "f5be8eb39f2049d0cd4957403e10b62415032c03",
+        "sha": "362b28424fbcc00646c1fd6a030890e43063bd30",
         "user": {
           "avatar_url": "https://avatars.githubusercontent.com/u/100733843?v=4",
           "events_url": "https://api.github.com/users/algleymi/events{/privacy}",
@@ -343,9 +343,9 @@
           "url": "https://api.github.com/users/algleymi"
         }
       },
-      "html_url": "https://github.com/algleymi/what-would-linus-torvalds-say/pull/4",
-      "id": 1665416714,
-      "issue_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/issues/4",
+      "html_url": "https://github.com/algleymi/what-would-linus-torvalds-say/pull/5",
+      "id": 1665486034,
+      "issue_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/issues/5",
       "labels": [],
       "locked": false,
       "maintainer_can_modify": false,
@@ -356,20 +356,20 @@
       "merged_at": null,
       "merged_by": null,
       "milestone": null,
-      "node_id": "PR_kwDOK-92Gs5jRD4K",
-      "number": 4,
-      "patch_url": "https://github.com/algleymi/what-would-linus-torvalds-say/pull/4.patch",
+      "node_id": "PR_kwDOK-92Gs5jRUzS",
+      "number": 5,
+      "patch_url": "https://github.com/algleymi/what-would-linus-torvalds-say/pull/5.patch",
       "rebaseable": null,
       "requested_reviewers": [],
       "requested_teams": [],
       "review_comment_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/comments{/number}",
       "review_comments": 0,
-      "review_comments_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/4/comments",
+      "review_comments_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/5/comments",
       "state": "open",
-      "statuses_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/statuses/f5be8eb39f2049d0cd4957403e10b62415032c03",
+      "statuses_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/statuses/362b28424fbcc00646c1fd6a030890e43063bd30",
       "title": "tmp",
-      "updated_at": "2024-01-04T23:06:09Z",
-      "url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/4",
+      "updated_at": "2024-01-05T00:24:56Z",
+      "url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls/5",
       "user": {
         "avatar_url": "https://avatars.githubusercontent.com/u/4173364?v=4",
         "events_url": "https://api.github.com/users/arnoschutijzer/events{/privacy}",
@@ -453,8 +453,8 @@
       "name": "what-would-linus-torvalds-say",
       "node_id": "R_kgDOK-92Gg",
       "notifications_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/notifications{?since,all,participating}",
-      "open_issues": 2,
-      "open_issues_count": 2,
+      "open_issues": 3,
+      "open_issues_count": 3,
       "owner": {
         "avatar_url": "https://avatars.githubusercontent.com/u/100733843?v=4",
         "events_url": "https://api.github.com/users/algleymi/events{/privacy}",
@@ -477,9 +477,9 @@
       },
       "private": true,
       "pulls_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/pulls{/number}",
-      "pushed_at": "2024-01-04T23:06:10Z",
+      "pushed_at": "2024-01-05T00:24:56Z",
       "releases_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/releases{/id}",
-      "size": 14,
+      "size": 30,
       "ssh_url": "git@github.com:algleymi/what-would-linus-torvalds-say.git",
       "stargazers_count": 0,
       "stargazers_url": "https://api.github.com/repos/algleymi/what-would-linus-torvalds-say/stargazers",
