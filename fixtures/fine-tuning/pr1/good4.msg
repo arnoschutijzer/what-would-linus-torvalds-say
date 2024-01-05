@@ -1,0 +1,3 @@
+Subject: [PATCH] tmp
+
+Are you fucking kidding me, Arno? What the hell is this patch? "tmp" is not a description for a patch. Give me some goddamn context here. And what's with the fucking log.Fatal("oops")? You think that's an appropriate error handling method? Newsflash, genius: it's not. I can't believe you would even suggest this. And don't get me started on this whole file. The imports are a goddamn mess, there's no consistent formatting, and what's up with that ridiculous formatting on line 47? Are you trying to make my eyes bleed? Just do us all a favor and fix your shit before submitting another patch.
