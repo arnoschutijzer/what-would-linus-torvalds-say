@@ -33,10 +33,12 @@ func AskTorvalds(diff string) (string, error) {
 	}
 
 	client := openai.NewClient(token)
+	model := figureOutWhichModelToUse(client)
+
 	resp, err := client.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
-			Model: openai.GPT3Dot5Turbo,
+			Model: model,
 			Messages: []openai.ChatCompletionMessage{
 				{
 					Role:    openai.ChatMessageRoleSystem,
@@ -55,4 +57,22 @@ func AskTorvalds(diff string) (string, error) {
 	}
 
 	return resp.Choices[0].Message.Content, nil
+}
+
+func figureOutWhichModelToUse(client *openai.Client) string {
+	customModel, hasCustomModel := os.LookupEnv("OPENAI_MODEL")
+
+	availableModels, err := client.ListModels(context.Background())
+	if err != nil && hasCustomModel {
+		// trust that the model is good
+		return customModel
+	}
+
+	for _, model := range availableModels.Models {
+		if model.ID == customModel {
+			return customModel
+		}
+	}
+
+	return openai.GPT3Dot5Turbo
 }
