@@ -18,5 +18,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Println(whatTorvaldsSaid)
+	err = torvaldsify.AddCommentToPullRequest(event.Repository.Owner.Login, event.Repository.Name, event.Number, whatTorvaldsSaid)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

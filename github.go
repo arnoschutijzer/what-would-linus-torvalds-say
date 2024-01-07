@@ -60,3 +60,19 @@ func GetDiffFromPullRequest(owner string, repositoryName string, prNumber int) (
 
 	return diff, nil
 }
+
+func AddCommentToPullRequest(owner string, repositoryName string, prNumber int, comment string) error {
+	token, ok := os.LookupEnv("GITHUB_TOKEN")
+	if !ok {
+		return ErrCouldNotFindGithubToken
+	}
+
+	client := github.NewClient(nil).WithAuthToken(token)
+	bg := context.Background()
+	_, _, err := client.Issues.CreateComment(bg, owner, repositoryName, prNumber, &github.IssueComment{Body: &comment})
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
