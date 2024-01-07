@@ -1,0 +1,11 @@
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Review it
+    steps:
+      - name: Let Linus Torvalds review this PR
+        uses: ./ # Uses an action in the root directory
