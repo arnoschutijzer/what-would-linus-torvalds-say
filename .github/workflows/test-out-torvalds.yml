@@ -13,3 +13,4 @@ jobs:
         uses: ./ # Uses an action in the root directory
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
