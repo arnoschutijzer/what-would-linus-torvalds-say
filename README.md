@@ -18,6 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
+          OPENAI_MODEL: "gpt-3.5-turbo" # optional, works with any model the token has access to
 ```
 
 <img src="./.github/torvalds.JPG" alt="Linus Torvalds giving you the finger." />
