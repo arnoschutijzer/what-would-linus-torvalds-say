@@ -10,12 +10,8 @@ import (
 )
 
 type Event struct {
-	Number      int         `json:"number"`
-	PullRequest PullRequest `json:"pull_request"`
-	Repository  Repository  `json:"repository"`
-}
-type PullRequest struct {
-	DiffURL string `json:"diff_url"`
+	Number     int        `json:"number"`
+	Repository Repository `json:"repository"`
 }
 type Repository struct {
 	Name  string `json:"name"`
