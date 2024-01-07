@@ -68,11 +68,5 @@ func figureOutWhichModelToUse(client *openai.Client) string {
 		return customModel
 	}
 
-	for _, model := range availableModels.Models {
-		if model.ID == customModel {
-			return customModel
-		}
-	}
-
 	return openai.GPT3Dot5Turbo
 }
