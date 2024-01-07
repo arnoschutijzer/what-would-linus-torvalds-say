@@ -1,5 +1,8 @@
 # What Would Linus Torvalds Say
 
+> [!WARNING]
+> Only works on pull requests
+
 ChatGPT4.0 has way better results or you can try fine-tuning the model using r/linusrants or some of the examples in `fixtures/fine-tuning`.
 
 Add a `.github/workflows/wwlts` file with the following contents:
@@ -21,10 +24,11 @@ jobs:
           OPENAI_MODEL: "gpt-3.5-turbo" # optional, works with any model the token has access to
 ```
 
-Or use the docker image:
+Or use the CLI:
 
 ```bash
-$ docker pull ghcr.io/algleymi/what-would-linus-torvalds-say:main
+$ go build -o torvaldsify cmd/cli/main.go
+$ ./torvaldsify <owner> <repo> <prNumber> # e.g. ./torvaldsify algleymi what-would-linus-torvalds-say 1
 ```
 
 <img src="./.github/torvalds.JPG" alt="Linus Torvalds giving you the finger." />
