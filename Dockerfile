@@ -5,7 +5,7 @@ WORKDIR /dist
 COPY . .
 
 RUN go get -v -t -d ./...
-RUN go build -o torvalds cmd/cli/main.go
+RUN go build -o torvalds cmd/action/main.go
 
 FROM scratch
 

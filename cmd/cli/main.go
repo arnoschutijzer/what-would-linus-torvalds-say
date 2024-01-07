@@ -2,17 +2,26 @@ package main
 
 import (
 	"log"
+	"os"
+	"strconv"
 
 	torvaldsify "github.com/arnoschutijzer/what-would-linus-torvalds-say"
 )
 
 func main() {
-	event, err := torvaldsify.ParseEventFromGithubActionsEvent()
+	if len(os.Args) < 4 {
+		log.Fatal("Usage: go run main.go owner repo prNumber")
+	}
+	owner := os.Args[1]
+	repo := os.Args[2]
+	pr := os.Args[3]
+
+	prNumber, err := strconv.Atoi(pr)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("prNumber is not a number")
 	}
 
-	diff, err := torvaldsify.GetDiffFromPullRequest(event.Repository.Owner.Login, event.Repository.Name, event.Number)
+	diff, err := torvaldsify.GetDiffFromPullRequest(owner, repo, prNumber)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -22,7 +31,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = torvaldsify.AddCommentToPullRequest(event.Repository.Owner.Login, event.Repository.Name, event.Number, whatTorvaldsSaid)
+	err = torvaldsify.AddCommentToPullRequest(owner, repo, prNumber, whatTorvaldsSaid)
 	if err != nil {
 		log.Fatal(err)
 	}

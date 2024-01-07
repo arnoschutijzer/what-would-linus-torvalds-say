@@ -21,4 +21,10 @@ jobs:
           OPENAI_MODEL: "gpt-3.5-turbo" # optional, works with any model the token has access to
 ```
 
+Or use the docker image:
+
+```bash
+$ docker pull ghcr.io/algleymi/what-would-linus-torvalds-say:main
+```
+
 <img src="./.github/torvalds.JPG" alt="Linus Torvalds giving you the finger." />
