@@ -1,11 +1,12 @@
 on:
-  pull_request:
-    branches: [ main ]
+  issue_comment:
+    types: [created, deleted]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Review it
+    if: ${{ github.event.issue.pull_request }} && contains(github.event.comment.body, '/review-linus')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
