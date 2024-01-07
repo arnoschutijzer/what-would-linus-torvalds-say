@@ -1,7 +1,7 @@
 # What Would Linus Torvalds Say
 
 > [!WARNING]
-> Only works on pull requests
+> Only works on pull requests. Obviously don't use this unless you've got cash to burn since this will run on every pull request.
 
 ChatGPT4.0 has way better results or you can try fine-tuning the model using r/linusrants or some of the examples in `fixtures/fine-tuning`.
 
