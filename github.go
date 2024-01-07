@@ -24,23 +24,36 @@ type Owner struct {
 var ErrCouldNotFindEvent = errors.New("could not find pull request event")
 var ErrCouldNotFindGithubToken = errors.New("could not find github token")
 
-func GetDiffFromPullRequest() (string, error) {
+func ParseEventFromGithubActionsEvent() (*Event, error) {
 	pathToEvent, ok := os.LookupEnv("GITHUB_EVENT_PATH")
 	if !ok {
-		return "", ErrCouldNotFindEvent
+		return nil, ErrCouldNotFindEvent
 	}
+
+	return parseEventFromFile(pathToEvent)
+}
+
+func parseEventFromFile(path string) (*Event, error) {
+	data, _ := os.ReadFile(path)
+
+	var event Event
+	err := json.Unmarshal(data, &event)
+	if err != nil {
+		return nil, err
+	}
+
+	return &event, nil
+}
+
+func GetDiffFromPullRequest(owner string, repositoryName string, prNumber int) (string, error) {
 	token, ok := os.LookupEnv("GITHUB_TOKEN")
 	if !ok {
 		return "", ErrCouldNotFindEvent
 	}
 
-	data, _ := os.ReadFile(pathToEvent)
-	var event Event
-	json.Unmarshal(data, &event)
-
 	client := github.NewClient(nil).WithAuthToken(token)
 	bg := context.Background()
-	diff, _, err := client.PullRequests.GetRaw(bg, event.Repository.Owner.Login, event.Repository.Name, event.Number, github.RawOptions{Type: github.Patch})
+	diff, _, err := client.PullRequests.GetRaw(bg, owner, repositoryName, prNumber, github.RawOptions{Type: github.Patch})
 	if err != nil {
 		return "", err
 	}
