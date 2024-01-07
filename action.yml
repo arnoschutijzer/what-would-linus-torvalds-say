@@ -1,0 +1,5 @@
+name: 'what-would-linus-torvalds-say'
+description: 'Let Linus Torvalds review your pull requests.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
