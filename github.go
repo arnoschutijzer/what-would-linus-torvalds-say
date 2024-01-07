@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"os"
 
 	"github.com/google/go-github/v57/github"
@@ -26,6 +27,7 @@ var ErrCouldNotFindGithubToken = errors.New("could not find github token")
 
 func ParseEventFromGithubActionsEvent() (*Event, error) {
 	pathToEvent, ok := os.LookupEnv("GITHUB_EVENT_PATH")
+	fmt.Println(pathToEvent)
 	if !ok {
 		return nil, ErrCouldNotFindEvent
 	}
