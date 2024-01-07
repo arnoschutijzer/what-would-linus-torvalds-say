@@ -30,5 +30,3 @@ Or use the CLI:
 $ go build -o torvaldsify cmd/cli/main.go
 $ ./torvaldsify <owner> <repo> <prNumber> # e.g. ./torvaldsify algleymi what-would-linus-torvalds-say 1
 ```
-
-<img src="./.github/torvalds.JPG" alt="Linus Torvalds giving you the finger." />
