@@ -50,7 +50,7 @@ func parseEventFromFile(path string) (*Event, error) {
 func GetDiffFromPullRequest(owner string, repositoryName string, prNumber int) (string, error) {
 	token, ok := os.LookupEnv("GITHUB_TOKEN")
 	if !ok {
-		return "", ErrCouldNotFindEvent
+		return "", ErrCouldNotFindGithubToken
 	}
 
 	client := github.NewClient(nil).WithAuthToken(token)
