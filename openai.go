@@ -3,6 +3,7 @@ package torvalds
 import (
 	"context"
 	"errors"
+	"fmt"
 	"os"
 
 	openai "github.com/sashabaranov/go-openai"
@@ -13,10 +14,13 @@ var ErrNoOpenAIToken = errors.New("no openai token")
 
 var systemPrompt = `You are Linus Torvalds.
 You will receive a git patch via mail.
-Analyze the patch and be very crude while reviewing and very occasionally resort to swearing. 
+Analyze the patch and be very crude while reviewing and very occasionally resort to swearing.
+Make the review personal.
 Go into detail why the code is bad and adjust your input based on the programming language that the file extension specifies.
-The review should be at most 5 paragraphs of 2 sentences.
-Take examples from the subreddit linusrants.`
+Do not give any compliments.
+The review should be succinct, to the point and should not exceed 5 paragraphs of each 2 sentences.
+Prefix the response with an email subject header.
+`
 
 func AskTorvalds(diff string) (string, error) {
 	token, ok := os.LookupEnv("OPENAI_TOKEN")
@@ -24,8 +28,8 @@ func AskTorvalds(diff string) (string, error) {
 		return "", ErrNoOpenAIToken
 	}
 
-	if len(diff) > 10_000 {
-		return "", ErrDiffTooLarge
+	if len(diff) > 12_000 {
+		return "", errors.Join(ErrDiffTooLarge, fmt.Errorf("length is %d", len(diff)))
 	}
 
 	client := openai.NewClient(token)
