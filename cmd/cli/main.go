@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	diff, err := torvaldsify.GetDiffFromPullRequest()
+	event, err := torvaldsify.ParseEventFromGithubActionsEvent()
+	diff, err := torvaldsify.GetDiffFromPullRequest(event.Repository.Owner.Login, event.Repository.Name, event.Number)
 	if err != nil {
 		log.Fatal(err)
 	}
