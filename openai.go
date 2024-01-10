@@ -49,6 +49,7 @@ func AskTorvalds(diff string) (string, error) {
 					Content: diff,
 				},
 			},
+			Temperature: 0.5,
 		},
 	)
 
