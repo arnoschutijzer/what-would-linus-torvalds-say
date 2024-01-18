@@ -24,25 +24,25 @@ type Owner struct {
 var ErrCouldNotFindEvent = errors.New("could not find pull request event")
 var ErrCouldNotFindGithubToken = errors.New("could not find github token")
 
-func ParseEventFromGithubActionsEvent() (*Event, error) {
+func ParseEventFromGithubActionsEvent() (Event, error) {
 	pathToEvent, ok := os.LookupEnv("GITHUB_EVENT_PATH")
 	if !ok {
-		return nil, ErrCouldNotFindEvent
+		return Event{}, ErrCouldNotFindEvent
 	}
 
 	return parseEventFromFile(pathToEvent)
 }
 
-func parseEventFromFile(path string) (*Event, error) {
+func parseEventFromFile(path string) (Event, error) {
 	data, _ := os.ReadFile(path)
 
 	var event Event
 	err := json.Unmarshal(data, &event)
 	if err != nil {
-		return nil, err
+		return Event{}, err
 	}
 
-	return &event, nil
+	return event, nil
 }
 
 func GetDiffFromPullRequest(owner string, repositoryName string, prNumber int) (string, error) {
