@@ -1,6 +1,6 @@
 module github.com/arnoschutijzer/what-would-linus-torvalds-say
 
-go 1.21.6
+go 1.21.7
 
 require (
 	github.com/google/go-github/v58 v58.0.0
