@@ -6,7 +6,7 @@ import (
 	"errors"
 	"os"
 
-	"github.com/google/go-github/v58/github"
+	"github.com/google/go-github/v60/github"
 )
 
 type Event struct {
