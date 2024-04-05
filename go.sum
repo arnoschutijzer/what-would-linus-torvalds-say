@@ -11,4 +11,6 @@ github.com/sashabaranov/go-openai v1.20.3 h1:JMhaSfE1mLznYIvlf8odxbyWGiFFGnQjyLw
 github.com/sashabaranov/go-openai v1.20.3/go.mod h1:lj5b/K+zjTSFxVLijLSTDZuP7adOgerWeFyZLUhAKRg=
 github.com/sashabaranov/go-openai v1.20.4 h1:095xQ/fAtRa0+Rj21sezVJABgKfGPNbyx/sAN/hJUmg=
 github.com/sashabaranov/go-openai v1.20.4/go.mod h1:lj5b/K+zjTSFxVLijLSTDZuP7adOgerWeFyZLUhAKRg=
+github.com/sashabaranov/go-openai v1.20.5 h1:Sab4nzBLtoyxm4jRqH9G9pkIh50WpBFacPTEpruPB6o=
+github.com/sashabaranov/go-openai v1.20.5/go.mod h1:lj5b/K+zjTSFxVLijLSTDZuP7adOgerWeFyZLUhAKRg=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
