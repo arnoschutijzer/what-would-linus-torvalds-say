@@ -17,7 +17,7 @@ jobs:
     name: Review my patch pls
     steps:
       - name: Review
-        uses: algleymi/what-would-linus-torvalds-say@v1.0.0
+        uses: arnoschutijzer/what-would-linus-torvalds-say@v1.0.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
           OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
@@ -28,5 +28,5 @@ Or use the CLI:
 
 ```bash
 $ go build -o torvaldsify cmd/cli/main.go
-$ ./torvaldsify <owner> <repo> <prNumber> # e.g. ./torvaldsify algleymi what-would-linus-torvalds-say 1
+$ ./torvaldsify <owner> <repo> <prNumber> # e.g. ./torvaldsify arnoschutijzer what-would-linus-torvalds-say 1
 ```
