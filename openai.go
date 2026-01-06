@@ -63,16 +63,9 @@ func AskTorvalds(diff string) (string, error) {
 func figureOutWhichModelToUse(client *openai.Client) string {
 	customModel, hasCustomModel := os.LookupEnv("OPENAI_MODEL")
 
-	availableModels, err := client.ListModels(context.Background())
-	if err != nil && hasCustomModel {
+	if hasCustomModel {
 		// trust that the model is good
 		return customModel
-	}
-
-	for _, model := range availableModels.Models {
-		if model.ID == customModel {
-			return customModel
-		}
 	}
 
 	return openai.GPT3Dot5Turbo
